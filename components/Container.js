@@ -46,8 +46,41 @@ function Container({ children }) {
           onClick={toggleColorMode}
 
         />
-
+        <Box>
+          <NextLink href="/dashboard" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Dashboard
+            </Button>
+          </NextLink>
+          <NextLink href="/blog" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Blog
+            </Button>
+          </NextLink>
+          <NextLink href="/about" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              About
+            </Button>
+          </NextLink>
+          <NextLink href="/" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Home
+            </Button>
+          </NextLink>
+        </Box>
       </StickyNav>
+
+      <Flex
+        as="main"
+        justifyContent="center"
+        flexDirection="column"
+        bg={bgColor[colorMode]}
+        color={primarytextColor[colorMode]}
+        px={8}
+
+      >
+        {children}
+      </Flex>
     </>
   )
 }
