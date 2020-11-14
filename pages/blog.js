@@ -17,7 +17,6 @@ import BlogPost from '../components/BlogPost';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import { frontMatter as blogPosts } from './blog/**/*.mdx';
-import blogs from './blog/*'
 const url = 'https://leerob.io/blog';
 const title = 'Blog – Lee Robinson';
 const description =
@@ -39,7 +38,6 @@ const Blog = () => {
       frontMatter.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
     );
 
-  console.log("blogs", blogs)
   return (
     <>
       <Container>

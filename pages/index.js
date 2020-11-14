@@ -2,7 +2,6 @@ import React from 'react';
 import { useColorMode, Heading, Text, Flex, Stack } from '@chakra-ui/core';
 
 import Container from '../components/Container';
-import { frontMatter as abc } from './blog/monorepo-lerna-yarn-workspaces.mdx'
 
 
 const Index = () => {
@@ -13,7 +12,6 @@ const Index = () => {
   };
   return (
     <Container>
-      {/* {console.log("mono frontMatter", frontMatter)} */}
       <Stack
         as="main"
         spacing={8}

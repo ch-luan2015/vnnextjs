@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { MDXProvider } from '@mdx-js/react';
+import { MDXProvider } from '@mdx-js/react'
 import { Global, css } from '@emotion/core';
 import {
   ThemeProvider,
