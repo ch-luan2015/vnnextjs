@@ -47,26 +47,29 @@ function Container({ children }) {
 
         />
         <Box>
-          <NextLink href="/dashboard" passHref>
-            <Button as="a" variant="ghost" p={[1, 4]}>
-              Dashboard
-            </Button>
-          </NextLink>
-          <NextLink href="/blog" passHref>
+          <NextLink href="/" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
               Blog
             </Button>
           </NextLink>
+          <NextLink href="/image" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Ảnh tích cóp
+            </Button>
+          </NextLink>
+
+          <NextLink href="/project" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Một số lặt vặt Lựng làm
+            </Button>
+          </NextLink>
+
           <NextLink href="/about" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
-              About
+              Về mình
             </Button>
           </NextLink>
-          <NextLink href="/" passHref>
-            <Button as="a" variant="ghost" p={[1, 4]}>
-              Home
-            </Button>
-          </NextLink>
+
         </Box>
       </StickyNav>
 

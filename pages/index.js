@@ -1,46 +1,130 @@
-import React from 'react';
-import { useColorMode, Heading, Text, Flex, Stack } from '@chakra-ui/core';
+import React, { useState } from 'react';
+import { NextSeo } from 'next-seo';
+import {
+  useColorMode,
+  Heading,
+  Text,
+  Flex,
+  Stack,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Icon
+} from '@chakra-ui/core';
 
 import Container from '../components/Container';
+import BlogPost from '../components/BlogPost';
+
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import { frontMatter as blogPosts } from './blog/**/*.mdx';
 
 
-const Index = () => {
+
+const url = 'https://ncl.io/blog';
+const title = 'Blog – Nguyen Chinh Luan';
+const description =
+  'Một ích thông tin về phần mềm, thủ thuật Mac, lập trình web và cuộc sống của mình.';
+
+const Blog = () => {
+  const [searchValue, setSearchValue] = useState('');
   const { colorMode } = useColorMode();
   const secondaryTextColor = {
     light: 'gray.700',
     dark: 'gray.400'
   };
+
+
+  const filteredBlogPosts = blogPosts
+    .sort(
+      (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
+    )
+    .filter((frontMatter) =>
+      frontMatter.title.toLowerCase().includes(searchValue.toLocaleLowerCase())
+    );
+
   return (
-    <Container>
-      <Stack
-        as="main"
-        spacing={8}
-        justifyContent="center"
-        alignItems="flex-start"
-        m="0 auto 4rem auto"
-        maxWidth="700px"
-      >
-        <Flex
-          flexDirection="column"
-          justifyContent="flex-start"
+    <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{
+          url,
+          title,
+          description
+        }}
+      />
+      <Container>
+        <Stack
+          as="main"
+          spacing={8}
+          justifyContent="center"
           alignItems="flex-start"
+          m="0 auto 4rem auto"
           maxWidth="700px"
         >
-          <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
-            Mình là Luận
-          </Heading>
-          <Text color={secondaryTextColor[colorMode]}>
-            Mình viết web, lâu lâu viết blog và dịch bài. Trang này rất đơn giản được tạo ra với mong muốn cung cấp một số tư liệu về html,css, ...để các bạn có thể tham khảo khi cần.
-          </Text>
-          <Text color={secondaryTextColor[colorMode]}>
-            Lâu lâu cũng thêm một chút ảnh nhí nhố và làm màu mình tích cóp được để cuộc sống lập trình chúng ta bớt nhạt hơn. Thanks mọi người!
-          </Text>
+          <Flex
+            flexDirection="column"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+            maxWidth="700px"
+          >
+            <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
+              Blog
+            </Heading>
+            <Text color={secondaryTextColor[colorMode]} mb={2}>
+              {`Mình bắt đầu viết từ năm 2019, Một phần về tự học web như html, css, js ... 
+                Tổng cộng mình đã viết ${blogPosts.length} bài trên trang này.   
+                Mọi người có thể dùng thanh search để tìm cho nhanh điều mình muốn.`}
+            </Text>
+            <InputGroup my={4} mr={4} w="100%">
+              <Input
+                aria-label="Search"
+                onChange={(e) => setSearchValue(e.target.value)}
+                placeholder="Search"
+              />
+              <InputRightElement>
+                <Icon name="search" color="gray.300" />
+              </InputRightElement>
+            </InputGroup>
+          </Flex>
 
-        </Flex>
+          {!searchValue && (
+            <Flex
+              flexDirection="column"
+              justifyContent="flex-start"
+              alignItems="flex-start"
+              maxWidth="700px"
+              mt={8}
+            >
+              <Heading letterSpacing="tight" mb={8} size="xl" fontWeight={700}>
+                Most Popular
+              </Heading>
+              {/* <BlogPost {...styleGuides} />
+              <BlogPost {...stripeDesign} />
+              <BlogPost {...monorepo} /> */}
+            </Flex>
+          )}
 
-      </Stack>
-    </Container>
-  )
-}
+          <Flex
+            flexDirection="column"
+            justifyContent="flex-start"
+            alignItems="flex-start"
+            maxWidth="700px"
+            mt={8}
+          >
+            <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
+              All Posts
+            </Heading>
+            {!filteredBlogPosts.length && 'No posts found.'}
+            {filteredBlogPosts.map((frontMatter) => (
+              <BlogPost key={frontMatter.title} {...frontMatter} />
+            ))}
+          </Flex>
+        </Stack>
+      </Container>
+    </>
+  );
+};
 
-export default Index;
+export default Blog;
