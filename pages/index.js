@@ -27,12 +27,13 @@ const Index = () => {
           maxWidth="700px"
         >
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
-            Hey, I’m Lee Robinson
+            Mình là Luận
           </Heading>
           <Text color={secondaryTextColor[colorMode]}>
-            I’m a developer, writer, and creator. I work at ▲Vercel as a
-            Solutions Architect. You’ve found my personal slice of the internet
-            – everything you want to know and more is here.
+            Mình viết web, lâu lâu viết blog và dịch bài. Trang này rất đơn giản được tạo ra với mong muốn cung cấp một số tư liệu về html,css, ...để các bạn có thể tham khảo khi cần.
+          </Text>
+          <Text color={secondaryTextColor[colorMode]}>
+            Lâu lâu cũng thêm một chút ảnh nhí nhố và làm màu mình tích cóp được để cuộc sống lập trình chúng ta bớt nhạt hơn. Thanks mọi người!
           </Text>
 
         </Flex>
