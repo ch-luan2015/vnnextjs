@@ -15,13 +15,16 @@ import Container from '../components/Container';
 
 export default function BlogLayout({ children, frontMatter }) {
   const slug = frontMatter.__resourcePath
-    .replace('/blog', '')
+    .replace('blog/', '')
     .replace('.mdx', '');
   const { colorMode } = useColorMode();
   const textColor = {
     light: 'gray.700',
     dark: 'gray.400'
   };
+  console.log("slug", slug);
+  console.log("frontMatter.__resourcePath", frontMatter.__resourcePath);
+
   return (
     <Container>
       <Stack
@@ -55,7 +58,7 @@ export default function BlogLayout({ children, frontMatter }) {
               <Avatar
                 size="xs"
                 name="NCL"
-                src="public/static/images/Admin/paleKing.jpg"
+                src="static/images/Admin/paleKing.jpg"
                 mr={2}
               />
 

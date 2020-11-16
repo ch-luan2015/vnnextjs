@@ -16,11 +16,12 @@ const BlogPost = (frontMatter) => {
   };
 
   const slug = frontMatter.__resourcePath
-    .replace('/blog', '')
+    .replace('blog/', '')
     .replace('.mdx', '');
 
   const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
   const views = data?.total;
+
 
   return (
     <NextLink href={`/${slug}`} passHref>

@@ -89,7 +89,7 @@ const Blog = () => {
             </InputGroup>
           </Flex>
 
-          {!searchValue && (
+          {/* {!searchValue && (
             <Flex
               flexDirection="column"
               justifyContent="flex-start"
@@ -100,11 +100,11 @@ const Blog = () => {
               <Heading letterSpacing="tight" mb={8} size="xl" fontWeight={700}>
                 Most Popular
               </Heading>
-              {/* <BlogPost {...styleGuides} />
+              <BlogPost {...styleGuides} />
               <BlogPost {...stripeDesign} />
-              <BlogPost {...monorepo} /> */}
+              <BlogPost {...monorepo} />
             </Flex>
-          )}
+          )} */}
 
           <Flex
             flexDirection="column"
