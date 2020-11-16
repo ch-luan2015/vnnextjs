@@ -15,7 +15,7 @@ import Container from '../components/Container';
 
 export default function BlogLayout({ children, frontMatter }) {
   const slug = frontMatter.__resourcePath
-    .replace('blog/', '')
+    .replace('/blog', '')
     .replace('.mdx', '');
   const { colorMode } = useColorMode();
   const textColor = {
@@ -54,23 +54,23 @@ export default function BlogLayout({ children, frontMatter }) {
             <Flex align="center">
               <Avatar
                 size="xs"
-                name="Lee Robinson"
-                src="https://bit.ly/33vEjhB"
+                name="NCL"
+                src="public/static/images/Admin/paleKing.jpg"
                 mr={2}
               />
 
               <Text fontSize="sm" color={textColor[colorMode]}>
                 {frontMatter.by}
-                {'Lee Robinson / '}
+                {'NCL / '}
                 {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
               </Text>
             </Flex>
 
-            <Text fontSize="sm" color="gray.500" minWidth="100px" mt={[2, 0]}>
+            {/* <Text fontSize="sm" color="gray.500" minWidth="100px" mt={[2, 0]}>
               {frontMatter.readingTime.text}
               {` • `}
-              {/* <ViewCounter id={slug} /> */}
-            </Text>
+              <ViewCounter id={slug} />
+            </Text> */}
           </Flex>
         </Flex>
         {children}
@@ -79,7 +79,7 @@ export default function BlogLayout({ children, frontMatter }) {
           {/* <Link href={discussUrl(slug)} isExternal>
             {'Discuss on Twitter'}
           </Link> */}
-          {` • `}
+          {/* {` • `} */}
           {/* <Link href={editUrl(slug)} isExternal>
             {'Edit on GitHub'}
           </Link> */}

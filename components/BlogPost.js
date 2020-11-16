@@ -16,7 +16,7 @@ const BlogPost = (frontMatter) => {
   };
 
   const slug = frontMatter.__resourcePath
-    .replace('blog/', '')
+    .replace('/blog', '')
     .replace('.mdx', '');
 
   const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
