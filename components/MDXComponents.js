@@ -1,4 +1,4 @@
-
+/** @jsxImportSource @emotion/core */
 import {
   Box,
   Callout,
@@ -11,8 +11,6 @@ import {
   Divider,
   useColorMode
 } from '@chakra-ui/core';
-import { jsx } from '@emotion/react'
-
 import NextLink from 'next/link';
 
 const Table = (props) => (

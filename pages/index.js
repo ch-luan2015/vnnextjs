@@ -25,7 +25,7 @@ const title = 'Blog – Nguyen Chinh Luan';
 const description =
   'Một ích thông tin về phần mềm, thủ thuật Mac, lập trình web và cuộc sống của mình.';
 
-const Index = () => {
+const Blog = () => {
   const [searchValue, setSearchValue] = useState('');
   const { colorMode } = useColorMode();
   const secondaryTextColor = {
@@ -127,4 +127,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Blog;
