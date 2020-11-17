@@ -153,7 +153,7 @@ const Hr = () => {
 
 const MDXComponents = {
   h1: (props) => <Heading as="h1" size="xl" my={4} {...props} />,
-  h2: (props) => <DocsHeading as="h2" fontWeight="bold" size="lg" {...props} />,
+  h2: (props) => <DocsHeading as="h2" size="lg" {...props} />,
   h3: (props) => <DocsHeading as="h3" size="md" fontWeight="bold" {...props} />,
   inlineCode: (props) => (
     <Code variantColor="yellow" fontSize="0.84em" {...props} />
