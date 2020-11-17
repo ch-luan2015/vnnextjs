@@ -1,4 +1,10 @@
 {
   "presets": ["next/babel"],
-  "plugins": ["import-glob-array"]
+  "plugins": [
+    "import-glob-array",
+    ["@babel/plugin-transform-react-jsx", {
+      "throwIfNamespace": false, // defaults to true
+      "runtime": "automatic" // defaults to classic
+    }]
+  ]
 }

@@ -1,3 +1,4 @@
+
 import {
   Box,
   Callout,
@@ -10,7 +11,8 @@ import {
   Divider,
   useColorMode
 } from '@chakra-ui/core';
-import { jsx } from '@emotion/core';
+import { jsx } from '@emotion/react'
+
 import NextLink from 'next/link';
 
 const Table = (props) => (
@@ -56,6 +58,7 @@ const CustomLink = (props) => {
     light: 'hsl(208, 99%, 44%)',
     dark: 'hsl(208, 95%, 68%)'
   };
+
   const href = props.href;
   const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
 
@@ -94,7 +97,6 @@ const Quote = (props) => {
     />
   );
 };
-
 
 const DocsHeading = (props) => (
   <Heading
@@ -153,7 +155,7 @@ const Hr = () => {
 
 const MDXComponents = {
   h1: (props) => <Heading as="h1" size="xl" my={4} {...props} />,
-  h2: (props) => <DocsHeading as="h2" size="lg" {...props} />,
+  h2: (props) => <DocsHeading as="h2" fontWeight="bold" size="lg" {...props} />,
   h3: (props) => <DocsHeading as="h3" size="md" fontWeight="bold" {...props} />,
   inlineCode: (props) => (
     <Code variantColor="yellow" fontSize="0.84em" {...props} />
