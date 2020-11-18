@@ -22,8 +22,6 @@ export default function BlogLayout({ children, frontMatter }) {
     light: 'gray.700',
     dark: 'gray.400'
   };
-  console.log("slug", slug);
-  console.log("frontMatter.__resourcePath", frontMatter.__resourcePath);
 
   return (
     <Container>
@@ -43,7 +41,7 @@ export default function BlogLayout({ children, frontMatter }) {
           maxWidth="700px"
           w="100%"
         >
-          <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
+          <Heading letterSpacing="tight" mb={2} as="h1" size="2xl" >
             {frontMatter.title}
           </Heading>
           <Flex
@@ -64,7 +62,7 @@ export default function BlogLayout({ children, frontMatter }) {
 
               <Text fontSize="sm" color={textColor[colorMode]}>
                 {frontMatter.by}
-                {'NCL / '}
+                {'NCL-'}
                 {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
               </Text>
             </Flex>
