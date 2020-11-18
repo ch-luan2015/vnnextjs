@@ -85,7 +85,7 @@ export default function BlogLayout({ children, frontMatter }) {
             {'Edit on GitHub'}
           </Link> */}
         </Box>
-        <IframeResizer
+        {/* <IframeResizer
           checkOrigin={false}
           title="Comments"
           src={`https://fastfeedback.io/embed/BLspD6y8Bfn73LLm7nvW/${slug}?theme=${colorMode}`}
@@ -93,7 +93,7 @@ export default function BlogLayout({ children, frontMatter }) {
             width: '1px',
             minWidth: '100%'
           }}
-        />
+        /> */}
 
       </Stack>
     </Container>
