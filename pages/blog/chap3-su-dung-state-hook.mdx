@@ -1,0 +1,168 @@
+---
+title: 'Chap 3. Sử Dụng State Hook'
+publishedAt: '2020-11-18'
+summary: 'State hook dùng để tạo state cho component, vậy dùng như thế nào để dễ quản lý ?'
+image: '/static/images/zero-programming-experience-to-three-internships/banner.png'
+---
+
+![useState](https://daveceddia.com/images/useState-hook.png)
+
+### 1. Hook Dùng Làm Gì ?
+
+Hook thì quá nhiều bài đã viết rồi nên giờ mình tóm gọn lại thôi:
+
+> Hook dùng để tạo state cho component
+
+```jsx
+import React, { useState } from 'react';
+
+function Example() {
+  // Khai báo 1 biến trạng thái mới đặt tên là "count"
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Bạn đã click {count} lần</p>
+      <button onClick={() => setCount(count + 1)}>Click vào tôi</button>
+    </div>
+  );
+}
+```
+
+**Bên class state khai báo như thế nào ?**
+
+```jsx
+class Example extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+  render() {
+    return (
+      <div>
+        <p>Bạn đã bấm {this.state.count} lần</p>
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Bấm vào tôi
+        </button>
+      </div>
+    );
+  }
+}
+```
+
+Quá quen thuộc với mọi người rồi phải không?
+
+> const [name, setName] = useState("Tuấn");
+
+**Đọc ra sao?**
+
+Khai báo một state có tên name , một hàm setName để thay đổi giá trị của name và name có giá trị ban đầu là Tuấn .
+Khi muốn thay đổi name thì : `setName(Hải)` khi đó state name sẽ có giá trị mới là Hải.
+
+### 2. Hooks Và Function
+
+Function trong React sẽ có hai dạng là vầy:
+
+```jsx
+const Example = (props) => {
+  // Bạn có thể sử dụng hooks tại đây!
+  return <div />;
+};
+```
+
+hoặc
+
+```jsx
+function Example(props) {
+  // Bạn có thể sử dụng hooks tại đây!
+  return <div />;
+}
+```
+
+Ban đầu function có tên là stateless components vì chúng không sử dụng được các menthod Life-Cycle nhưng từ khi có hook thì chúng đã có thể và từ đó được gọi là function component.
+Hook không chạy trong class, các anh em lưu ý nhe.
+
+> Túm cái quần lại là nếu anh em xài function thì xài **Hook**, còn muốn xài class thì xài với **Life-Cycle**.
+
+### Bảng so sánh nhẹ các chức năng:
+
+**Function và Classes**
+
+| `const [name, setName] = useState("Tuấn")` |           **Funtion**           |         **Classes**         |
+| :----------------------------------------: | :-----------------------------: | :-------------------------: |
+|              **Create State**              | const [name] = useState("Tuấn") | this.state { name: "Tuấn" } |
+|              **Update State**              |          setName(Hải)           |   this.setState.name(Hải)   |
+
+1. Hàm useState làm gì khi được gọi?
+
+   > Nó khai báo một “state variable” (biến state).
+
+2. Hàm useState nhận tham số gì?
+
+   > Tham số duy nhất được truyền vào hook useState() là state ban đầu.
+
+3. useState trả về gì?
+   > Nó trả về một cặp giá trị dưới dạng mảng: state hiện tại và một hàm để update nó. Đây là lý do chúng ta viết const [count, setCount] = useState().
+
+### 3. Đọc Giá Trị State:
+
+Ở Class
+
+```jsx
+<p>Bạn đã click{this.state.count} lần </p>
+```
+
+còn bên Hook
+
+```jsx
+<p>Bạn đã click {count} lần </p>
+```
+
+### 4. Thay Đổi Giá Trị State:
+
+Mình nhớ có viết là không chơi thay đổi trực tiếp State mà phải qua một hàm đặc biệt của React. Bên hook xài đối số thứ 2 set cái gì đó nhe anh em: `[count, setCount]`
+
+```jsx
+<button onClick={() => setCount(count + 1)}>Click vào</button>
+```
+
+Tổng hợp tất cả trong 1 ví dụ:
+
+```jsx
+import React, { useState } from 'react';
+
+function Example() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Bạn đã click {count} lần</p>
+      <button onClick={() => setCount(count + 1)}>Click vào tôi</button>
+    </div>
+  );
+}
+```
+
+---
+
+Ok, đó là tất cả về useState rồi , bên dưới mình sẽ giải thích nâng cao cho ai thích mò thêm nhe.
+
+### 5. Giải Thích Nâng Cao :
+
+Cặp ngoặc vuông nghĩa là gì và bí ẩn đằng sau nó ?
+
+` const [singer, setSinger] = useState('ChiPu');`
+Cái cú pháp này ở Es6 người ta gọi là `“array destructuring”`
+Nghĩa là bạn tạo 2 biến mới singer và setSinger. Trong đó, singer là giá trị đầu tiên trả về bởi useState, và setSinger là giá trị thứ hai. Tương ứng với đoạn code:
+
+```jsx
+var singerStateVariable = useState('ChiPu'); // Trả về một cặp (mảng 2 phần tử)
+var singer = singerStateVariable[0]; // Phần tử đầu tiên
+var setSinger = singerStateVariable[1]; // Phần tử thứ hai
+```
+
+Khi chúng ta khai báo một biến state với useState. Nó trả về một cặp - mảng có 2 phần tử. Phần tử đầu tiên là giá trị hiện tại, phần tử thứ hai là hàm cập nhật giá trị đó. Sử dụng [0] and [1] để truy cập chúng thì dễ gây hoang mang bởi vậy chúng có ý nghĩa nhất định. Đây là lý do chúng ta dùng array destructuring.
+
+Rồi hết rồi, cảm ơn anh em đã theo dõi. Bài dài ghê.
