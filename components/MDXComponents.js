@@ -1,4 +1,5 @@
-/** @jsxImportSource @emotion/core */
+/** @jsx jsx */
+
 import {
   Box,
   Callout,
@@ -12,6 +13,7 @@ import {
   useColorMode
 } from '@chakra-ui/core';
 import NextLink from 'next/link';
+import { jsx } from '@emotion/core';
 
 const Table = (props) => (
   <Box overflowX="scroll" w="full">

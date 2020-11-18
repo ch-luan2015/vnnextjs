@@ -9,7 +9,6 @@ module.exports = withMdxEnhanced({
         require('remark-autolink-headings'),
         require('remark-slug'),
         require('remark-code-titles'),
-        require('./utils/title-style')
     ],
     rehypePlugins: [mdxPrism],
     extendFrontMatter: {
