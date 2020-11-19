@@ -1,17 +1,17 @@
 ---
-title: 'Chap 4.2 Ba cách điều khiển useEffect chạy theo ý muốn'
-publishedAt: '2020-11-18'
-summary: 'Hook có một số luật, luật này do mấy cao nhân React đặt ra giúp chúng ta code không bị lỗi nên ae ráng nhớ nhe.'
-image: '/static/images/zero-programming-experience-to-three-internships/banner.png'
+title: '🚩 Chap 4.2: Ba Cách Điều Khiển useEffect'
+publishedAt: '2020-11-19'
+summary: 'useEffect rất mạnh vì nó có thể chạy thay 3 menthod lifeCycle Did, Will, Un. Vậy điều khiển nó như thế nào?'
+image: '/static/images/chap42-ba-cach-su-dung-effect-hook/useeffect.jpg'
 ---
 
-![useEffect](https://codeworkshop.dev/static/0de30777474ef784ecf93456878b72e9/2706c/useeffect.jpg)
+![useEffect](/static/images/chap42-ba-cach-su-dung-effect-hook/useeffect.jpg)
 
-## 1. Làm sao để Effect chạy theo ý muốn của mình? :
+### 1. Làm Sao Để Effect Chạy Theo Ý Muốn Của Mình? :
 
-Như đã biết thì Effect chạy mỗi lần re-render. Đôi lúc nó sẽ làm ảnh hưởng performance của app. Trong Class ta có chuyện so sánh hai state prevState, prevProps với State, Props hiện tại, nếu có thay đổi thì mới render không thì thôi .
+Như đã biết thì Effect chạy mỗi lần re-render. Đôi lúc nó sẽ làm ảnh hưởng performance của app. Trong Class ta có chuyện so sánh hai state prevState, prevProps với State, Props hiện tại, nếu có thay đổi thì mới render không thì thôi.
 
-```
+```jsx
 componentDidUpdate(prevProps,prevState) {
   if (prevState.count !== this.state.count) {
     document.title = `You clicked ${this.state.count} times`;
@@ -19,50 +19,51 @@ componentDidUpdate(prevProps,prevState) {
 }
 ```
 
-Bên hook của mình cũng có thể làm được vậy , thêm vào 1 đối số [] nữa :
+Bên hook của mình cũng có thể làm được vậy , thêm vào 1 đối số vào `[ ]` nữa :
 
-```
+```jsx
 useEffect(() => {
   document.title = `You clicked ${count} times`;
 }, [count]); // Chỉ re-run effect nếu giá trị count thay đổi
 ```
 
-![](https://res.cloudinary.com/practicaldev/image/fetch/s--WCRU1oTD--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://res.cloudinary.com/dqhskqqa6/image/upload/v1586458182/state-management-in-pure-react-with-hooks/nx2oyxkax8iqqpdwrekz.png)
+![](/static/images/chap42-ba-cach-su-dung-effect-hook/sumaryEffect.png)
 
-Tén tén tén ten, bí thuật ở đây `[count]` , effect chỉ chạy lại khi giá trị count thay đổi. Nếu count là 5 và lần sau count vẫn là 5 thì nó sẽ o chạy Effect. Bù lại nếu có gì thay đổi count lên 6 hay có giá trị khác thì nó lập tức chạy Effect ngay. Đó là tham số thứ 2 của useEffect.
+**Tén tén tén ten, bí thuật ở đây `[count]` , effect chỉ chạy lại khi giá trị count thay đổi.**
 
-Nếu có cleanup thì cũng có thể sử dụng tham số thứ hai như trên.
+- Nếu count là 5 và lần sau count vẫn là 5 thì nó sẽ không chạy Effect.
+- Bù lại nếu có gì thay đổi count lên 6 hay có giá trị khác thì nó lập tức chạy Effect ngay. Đó là tham số thứ 2 của useEffect.
 
-- Vậy nếu muốn effect chỉ chạy 1 lần duy nhất thì sao?
-  Thế thì không cần truyền gì cả chỉ cần để một mảng rỗng. []
+**Nếu có CleanUp thì cũng có thể sử dụng tham số thứ hai như trên.**
+
+- **Vậy nếu muốn effect chỉ chạy 1 lần duy nhất thì sao? :**
+  Thế thì không cần truyền gì cả chỉ cần để một mảng rỗng.
   Cái đồ quỷ này [] đồng nghĩa với việc bạn báo với React, effect này không phụ thuộc bất kỳ giá trị nào của prop hoặc state, do đó không bao giờ cần re-run.
 
----
+### 2. Tóm Lại Các Trường Hợp:
 
-## 2. Tóm lại các trường hợp:
+** 2.1. Chạy có điều kiện: **
 
-1. Chạy có điều kiện:
-
-```
+```jsx
 useEffect(() => {
   document.title = `You clicked ${count} times`;
 }, [count]); // Chỉ re-run effect nếu giá trị count thay đổi
 ```
 
-2. Chạy 1 lần duy nhất:
+** 2.2. Chạy 1 lần duy nhất:**
 
-```
+```jsx
 useEffect(() => {
   document.title = `You clicked ${count} times`;
 }, []); // Effect chỉ chạy 1 lần duy nhất.
 ```
 
-3. Chạy vô tội vạ , re-run là chạy:
+**3. Chạy Vô Tội Vạ, Re-run Là Chạy:**
 
-```
+```jsx
 useEffect(() => {
   document.title = `You clicked ${count} times`;
 }); // Effect chạy vô tội vạ , chỉ cần re-run là chạy bất chấp.
 ```
 
-Rùi , hết rồi , Effect hook có nhiu cơ bản thôi, đào sâu thì các bạn lên reactjs.org mà xem thêm. Cảm ơn mọi người rất nhiều. ^)^
+Rùi, hết rồi, Effect hook có nhiu cơ bản thôi, đào sâu thì các bạn lên [reactjs.org](https://reactjs.org/docs/hooks-effect.html) mà xem thêm. Cảm ơn mọi người rất nhiều.

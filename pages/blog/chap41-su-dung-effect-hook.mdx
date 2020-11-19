@@ -1,34 +1,36 @@
 ---
-title: 'Chap 4.1 Sử dụng Effect Hook'
-publishedAt: '2020-11-18'
-summary: 'Hook có một số luật, luật này do mấy cao nhân React đặt ra giúp chúng ta code không bị lỗi nên ae ráng nhớ nhe.'
-image: '/static/images/zero-programming-experience-to-three-internships/banner.png'
+title: '🚩 Chap 4.1: Sử Dụng Effect Hook'
+publishedAt: '2020-11-19'
+summary: 'Effect hook là một thứ rất thú vị, nó như cà phê 3 trong 1 vậy.'
+image: '/static/images/chap41-su-dung-effect-hook/useEffectHook.png'
 ---
 
-![useEffect](https://daveceddia.com/images/useEffect-hook.png)
-Effect Hook cho phép thực hiện side effect bên trong các function component
+<!-- ![useEffect](https://daveceddia.com/images/useEffect-hook.png) -->
 
-## 1. Tạo một useEffect:
+![useEffect](/static/images/chap41-su-dung-effect-hook/useEffectHook.png)
 
-```
+Effect Hook cho phép thực hiện side effect bên trong các function component ✌️
+
+### 1. Tạo Một useEffect:
+
+```jsx
 // Tương tự như componentDidMount và componentDidUpdate:
- useEffect(() => {
-   // Cập nhập document title sử dụng browser API
-   document.title = `You clicked ${count} times`;
- });
+useEffect(() => {
+  // Cập nhập document title sử dụng browser API
+  document.title = `You clicked ${count} times`;
+});
 ```
 
 Việc fetching data, thiết lập các subscription, và việc thay đổi DOM trong React component, những hành động như vậy được gọi là “side effect” (hoặc “effect). Bạn có thể đã sử dụng những “side effect” này trong những component của bạn trước đây.
 
-Có hai loại Effect là loại cần cleanup và loại không cần cleanup. Bây giờ mình sẽ lần lượt nói về hai loại này nhe.
+Có hai loại Effect là loại cần cleanup và loại không cần cleanup. Bây giờ mình sẽ lần lượt nói về hai loại này.
 
----
+### 2. Effect Không Cần Cleanup:
 
-## 2. Effect không cần Cleanup:
+Đôi lúc, chúng ta muốn chạy một vài đoạn code sau khi React đã cập nhập DOM. Network request, tự ý thay đổi DOM, và logging là những ví dụ điển hình của effect không cần cleanup. Chúng ta gọi như vậy vì có thể chạy chúng và quên ngay lập tức.
+**Ví dụ như hiện số lần đếm lên document title:**
 
-Đôi lúc, chúng ta muốn chạy một vài đoạn code sau khi React đã cập nhập DOM. Network request, tự ý thay đổi DOM, và logging là những ví dụ điển hình của effect không cần cleanup. Chúng ta gọi như vậy vì có thể chạy chúng và quên ngay lập tức. Ví dụ như hiện số lần đếm lên document title :
-
-```
+```jsx
 import React, { useState, useEffect } from 'react';
 
 function Example() {
@@ -41,9 +43,7 @@ function Example() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 }
@@ -51,18 +51,18 @@ function Example() {
 
 **Chuyên mục hỏi xoáy đáp lòng vòng :**
 
-- useEffect nó đã làm gì vậy?
+- **useEffect nó đã làm gì vậy?**
   Nó nói với React rằng component cần làm cái gì đó sau khi render. React sẽ nhớ hàm truyền vào và sau khi render nó sẽ gọi hàm đó (đó gọi là Effect). Trong effect này, chúng ta đổi document title, chúng ta cũng có thể fetch data hoặc gọi một số API khác.
 
-- Tại sao useEffect được gọi bên trong component?
-  Vì để nó có thể truy xuất đến state count hoặc bất kì props nào. Hook tận dụng JavaScript closures, effect vẫn nằm trong scope của Function. Là hàng nội bộ ^^.
+- **Tại sao useEffect được gọi bên trong component?**
+  Vì để nó có thể truy xuất đến state count hoặc bất kì props nào. Hook tận dụng JavaScript closures, effect vẫn nằm trong scope của Function. Là hàng nội bộ.
 
-- useEffect chạy sau tất cả những lần render?
+- **useEffect chạy sau tất cả những lần render?**
   Đúng , mặc định là sau lần đầu tiên, và sau đó là các lần update. Nhưng chúng ta có thể custom lại nó theo các mục đích của chúng ta.
 
 **Giờ đi sâu cụ thể hơn chút**
 
-```
+```jsx
 function Example() {
   const [count, setCount] = useState(0);
 
@@ -72,18 +72,16 @@ function Example() {
 }
 ```
 
-Chúng ta khai báo state `count`, và sau đó nói với React chúng ta cần sử dụng. Chúng ta truyền cho `useEffect Hook` một hàm. Hàm truyền vào này là effect.
+Chúng ta khai báo state `count`, và sau đó nói với React chúng ta cần sử dụng. Chúng ta truyền cho `useEffect` một hàm. Hàm truyền vào này là effect.
 Bên trong effect, chúng ta đặt document title sử dụng API `document.title`. Chúng ta có thể đọc giá trị sau cùng của count bên trong effect bởi vì nó nằm chung scope với function. Khi React render component, nó sẽ nhớ lại effect chúng ta đã gửi, và chạy effect sau khi cập nhật DOM. Nó xảy ra ở tất cả các lần render, kể cả lần đầu.
 
----
-
-## 3. Effect cần Cleanup:
+### 3. Effect Cần Cleanup:
 
 Ở trên là các effect không cần clean nhưng một số trường hợp effect cần có. Ví dụ, chúng ta muốn thiết lập các subscription cho vài data source bên ngoài. Tình huống đó, clean up là rất quan trọng để không xảy ra memory leak!
 
-Ở bên Class chúng ta có hai menthod componentDidMount và componentWillUnmount để thể hiện việc cập nhật và clear data. Còn bên hook thì sao ?
+Ở bên Class chúng ta có hai menthod `componentDidMount` và `componentWillUnmount` để thể hiện việc cập nhật và clear data. Còn bên hook thì sao ?
 
-```
+```jsx
 function FriendStatus(props) {
   const [isOnline, setIsOnline] = useState(null);
 
@@ -107,19 +105,17 @@ function FriendStatus(props) {
 
 **Hỏi tiếp:**
 
-- Tại sao chúng ta trả về function bên trong effect?
-  Đây là một tuỳ chọn để chạy cơ chế clean cho effect. Nó cho phép chúng ta đưa tạo và xóa subscription trong cùng một effect. Ok con dê ? ^^
+- **Tại sao chúng ta trả về function bên trong effect?**
+  Đây là một tuỳ chọn để chạy cơ chế clean cho effect. Nó cho phép chúng ta đưa tạo và xóa subscription trong cùng một effect. Ok con dê?
 
-- Khi nào React clean up một effect?
+- **Khi nào React clean up một effect?**
   React thực hiện cleanup khi component unmount
 
----
-
-## Tóm lại là :
+### 📖 Tóm Lại Là :
 
 Chúng ta đã biết useEffect cho phép chúng ta thực hiện nhiều kiểu side effect sau khi component được render. Một vài effect cần cleanup nó sẽ return một function:
 
-```
+```jsx
 useEffect(() => {
   function handleStatusChange(status) {
     setIsOnline(status.isOnline);
@@ -134,8 +130,10 @@ useEffect(() => {
 
 Một vài effect khác có thể không cần cleanup, thì không cần return gì cả.
 
-```
+```jsx
 useEffect(() => {
- document.title = `You clicked ${count} times`;
+  document.title = `You clicked ${count} times`;
 });
 ```
+
+Bài hôm nay tới đây thôi, cảm ơn mọi người, bài sau mình viết tiếp ba chế độ sử dụng effect nhe. 😊
