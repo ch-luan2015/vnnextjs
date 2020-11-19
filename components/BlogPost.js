@@ -15,17 +15,15 @@ const BlogPost = (frontMatter) => {
     dark: 'gray.400'
   };
 
-  const slug = frontMatter.__resourcePath
-    .replace('blog/', '')
-    .replace('.mdx', '');
 
-  const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
-  const views = data?.total;
+  var slug = frontMatter.__resourcePath.replace("blog\\", "").replace(".mdx", "");
 
-  console.log("slug", slug);
+  // const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
+  // const views = data?.total;
+
 
   return (
-    <NextLink href={`./blog/${slug}`} passHref>
+    <NextLink href={`/blog/${slug}`} passHref>
       <Link w="100%" _hover={{ textDecoration: 'none' }}>
         <Box mb={8} display="block" width="100%">
           <Flex
@@ -36,14 +34,14 @@ const BlogPost = (frontMatter) => {
             <Heading size="md" as="h3" mb={2} fontWeight="medium">
               {title}
             </Heading>
-            <Text
+            {/* <Text
               color="gray.500"
               minWidth="105px"
               textAlign={['left', 'right']}
               mb={[4, 0]}
             >
               {`${views ? format(view) : '---'}view`}
-            </Text>
+            </Text> */}
           </Flex>
           <Text color={secondaryTextColor[colorMode]}>{summary}</Text>
         </Box>

@@ -1,0 +1,220 @@
+---
+title: "🔰 Tutorial 1: Viết Tài Liệu Bằng MarkDown"
+publishedAt: "2020-11-19"
+summary: "Bạn có biết Github viết tài liệu kỹ thuật bằng gì không? Markdown! Ngay cả trang web này cũng viết trên nền đó. Bạn có muốn viết trang như github? Thử nhe."
+image: "/static/images/chap1-gioi-thieu-ve-hook/gioithieuhook.png"
+---
+
+### 1. Markdown Là Gì ?
+
+Markdown **(.md)** là ngôn ngữ đánh dấu văn bản được tạo ra bởi John Gruber.
+Markdown sử dụng cú pháp khá đơn giản và dễ hiểu để đánh dấu văn bản và văn bản được viết bằng Markdown sẽ có thể được chuyển đổi sang HTML.
+Ngược lại các văn bản được viết bằng HTML cũng có thể được chuyển đổi sang Markdown.
+
+### 2. Tại Sao Cần Dùng Markdown? :
+
+Nó đơn giản, nhẹ và thân thiện hơn với người dùng hoặc các dev, code, engineer,... muốn viết tài liệu về kỹ thuật.
+
+**Ví dụ:**
+
+```html
+<h3>Tiêu đề viết bằng HTML :</h3>
+<p>Đoạn văn thứ 1</p>
+<p>Đoạn văn thứ 2</p>
+<p>Đoạn văn thứ 3</p>
+```
+
+```markdown
+### Tiêu đề viết bằng Markdown
+
+Đoạn văn thứ 1
+Đoạn văn thứ 2
+Đoạn văn thứ 3
+```
+
+Rõ ràng anh em thấy được cách viết thứ hai ngắn gọn và dễ hiểu hơn rất nhiều so với cách viết đầu tiên dùng HTML.
+Mình đang dùng phần mềm Joplin chuyên viết markdown , như anh em thấy bên trái là editor dùng markdown, bên phải là text sẽ hiện trên web.
+
+![editor](/static/images/tutorial1-markdown/editor.png)
+
+### 3. Một số cú pháp phổ biến để sử dụng MD :
+
+**1. Heading :**
+Dùng dấu # , bao nhiêu dấu # tương đương h1, h2, h3,..., h6 bên HTML.
+
+```markdown
+# Heading1
+```
+
+```markdown
+## Heading2
+```
+
+**2. In đậm và in nghiêng : bold và italic **
+
+Chữ **in đậm**, **in đậm 2** và chữ _in nghiêng_ , _in nghiêng 2_ , **_vừa in nghiêng vừa bôi đậm_** và ~~chữ gạch ngang~~
+
+```markdown
+Chữ **in đậm** , **in đậm 2** và chữ _in nghiêng_ , _in nghiêng 2_ , **_vừa in nghiêng vừa bôi đậm_** và ~~chữ gạch ngang~~
+```
+
+**3. Một danh sách không thứ tự như todo list :**
+
+- Xe đạp
+- Xe hơi
+- Xe gắn máy
+
+```markdown
+- Xe đạp
+- Xe hơi
+- Xe gắn máy
+```
+
+**4. Một danh sách có thứ tự:**
+
+1.  Xe đạp
+2.  Xe hơi
+3.  Xe gắn máy
+
+```md
+1. Xe đạp
+2. Xe hơi
+3. Xe gắn máy
+```
+
+**5. Đánh dấu hình ảnh:**
+
+```md
+![name](href)
+```
+
+**Ảnh save tại local hay tại máy tính :**
+![Local](/static/images/tutorial1-markdown/editor.png)
+
+```md
+![Yua](images/yuaMikami.png)
+```
+
+**Ảnh ở trên internet với đường dẫn url: **
+
+![Mình không thể nói đây là Yua Mikami và Asuka Kirara](https://gamek.mediacdn.vn/133514250583805952/2020/9/11/photo-3-1599818427409945693895.jpeg)
+
+```md
+![Mình không thể nói đây là Yua Mikami và Asuka Kirara](https://gamek.mediacdn.vn/133514250583805952/2020/9/11/photo-3-1599818427409945693895.jpeg)
+```
+
+Gần tương tự như khi đánh dấu hình ảnh, với cách đánh dấu sử dụng ngôn ngữ Markdown như trên thì đoạn văn bản bên trong `![]` sẽ tương đương với giá trị của thuộc tính title trong thẻ `<a>`
+Html và liên kết đặt trong `()` sẽ tương đương với đường dẫn href trong thẻ `<a>`.
+
+**6. Chèn link đường dẫn:**
+
+[Link](http://~)
+
+```md
+[Link](http://~)
+```
+
+[Zingnews](https://zingnews.vn/)
+
+```md
+[Zingnews](https://zingnews.vn/)
+```
+
+**7. Code block inline :**
+
+Để viết `inline code` :
+
+```md
+`inlide code`
+```
+
+Để highlight block code :
+
+````md
+    ```html
+    <p>Đây là paragraph html</p>
+
+    ```
+````
+
+```html
+<p>Đây là paragraph html</p>
+```
+
+**8. Kẻ ngang :**
+
+---
+
+```md
+---
+```
+
+**9. Blockquotes:**
+
+> Blockquotes
+
+```md
+> Blockquotes
+```
+
+Lồng nhau: >>
+
+> Quantrimang.com là mạng xã hội dành cho những tín đồ công nghệ.
+>
+> > Bạn có thể chia sẻ bài viết của mình trên trang nếu có tài khoản.
+> >
+> > > Bạn nên đăng ký một tài khoản .
+
+```md
+> Quantrimang.com là mạng xã hội dành cho những tín đồ công nghệ.
+>
+> > Bạn có thể chia sẻ bài viết của mình trên trang nếu có tài khoản.
+> >
+> > > Bạn nên đăng ký một tài khoản .
+```
+
+**10. Đôi khi viết sẽ có kí hiệu \* , > ,.. trùng với ký hiệu markdown vậy làm sao viết được ?:**
+
+**Thêm dấu \ vào đầu dòng**
+
+\*text\*
+
+```md
+\*text\*
+```
+
+**10. CheckList :**
+
+### Hệ mặt trời
+
+- [ ] Mercury
+- [ ] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+
+```md
+- [ ] Mercury
+- [ ] Venus
+- [x] Earth (Orbit/Moon)
+- [x] Mars
+- [ ] Jupiter
+```
+
+**12. Table:**
+
+| Tables     |    Are    |   Cool |
+| ---------- | :-------: | -----: |
+| cột 3 là   | canh phải | \$1600 |
+| cột 2 là   | canh giữa |   \$12 |
+| cột một là | canh trái |    \$1 |
+
+```md
+| Tables     |    Are    |   Cool |
+| ---------- | :-------: | -----: |
+| cột 3 là   | canh phải | \$1600 |
+| cột 2 là   | canh giữa |   \$12 |
+| cột một là | canh trái |    \$1 |
+```
+
+Xong rồi đó, gần như là hết các cách viết Md rồi. Cảm ơn mọi người đã xem.
