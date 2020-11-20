@@ -52,7 +52,7 @@ function Container({ children }) {
               Blog
             </Button>
           </NextLink>
-          <NextLink href="/image" passHref>
+          <NextLink href="/memefun" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
               Ảnh tích cóp
             </Button>
