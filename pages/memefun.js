@@ -42,7 +42,7 @@ const Memefun = () => {
             {
               url: 'https://leerob.io/static/images/dashboard.jpg',
               alt: description,
-              width: 1280,
+              width: 900,
               height: 720
             }
           ]
@@ -55,13 +55,13 @@ const Memefun = () => {
           justifyContent="center"
           alignItems="flex-start"
           m="0 auto 4rem auto"
-          maxWidth="700px"
+          maxWidth="900px"
         >
           <Flex
             flexDirection="column"
             justifyContent="flex-start"
             alignItems="flex-start"
-            maxWidth="700px"
+            maxWidth="900px"
           >
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               Memefun
@@ -74,10 +74,12 @@ const Memefun = () => {
             flexDirection="column"
             justifyContent="flex-start"
             alignItems="flex-start"
-            maxWidth="700px"
+            maxWidth="900px"
             mt={8}
           >
 
+            <Card />
+            <Card />
             <Card />
           </Flex>
 
