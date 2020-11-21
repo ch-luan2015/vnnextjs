@@ -52,7 +52,7 @@ function Container({ children }) {
               Blog
             </Button>
           </NextLink>
-          <NextLink href="/memefun" passHref>
+          {/* <NextLink href="/memefun" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
               Ảnh tích cóp
             </Button>
@@ -62,7 +62,7 @@ function Container({ children }) {
             <Button as="a" variant="ghost" p={[1, 4]}>
               Một số lặt vặt Lựng làm
             </Button>
-          </NextLink>
+          </NextLink> */}
 
           <NextLink href="/about" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
