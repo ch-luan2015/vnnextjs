@@ -13,8 +13,8 @@ import {
 import Container from '../components/Container';
 import { CustomLink } from '../components/MDXComponents';
 
-const url = 'https://leerob.io/about';
-const title = 'About Me – Lee Robinson';
+const url = 'https://vnnextjs.com/about';
+const title = 'Về mình – Nguyen Chinh Luan';
 
 const About = () => {
   const { colorMode } = useColorMode();
@@ -61,12 +61,7 @@ const About = () => {
             <Text color={secondaryTextColor[colorMode]} mb={4}>
               Mình cũng là một thành viên núp lùm trên HackintoshVn. Lâu lâu cũng post một chút ảnh nhí nhố và làm màu mình tích cóp được để cuộc sống lập trình chúng ta bớt nhạt hơn. Thanks mọi người đã rì viu!
             </Text>
-            {/* <iframe
-              height="280"
-              src="https://www.google.com/maps/d/embed?mid=1QOGi-u8d4vwoQ4vC4zQjKxrSfsDIQdOK&hl=en"
-              title="Hang ổ của Lựng"
-              width="100%"
-            /> */}
+
           </Flex>
         </Stack>
       </Container>

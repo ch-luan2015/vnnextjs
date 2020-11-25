@@ -16,10 +16,10 @@ import Container from '../components/Container';
 import { CustomLink } from '../components/MDXComponents';
 import Card from '../components/Card';
 
-const url = 'https://leerob.io/dashboard';
-const title = 'Dashboard – Lee Robinson';
+const url = 'https://vnnextjs.com/memefun';
+const title = 'MemeFun – Nguyen Chinh Luan';
 const description =
-  'My personal dashboard, built with Next.js API routes deployed as serverless functions.';
+  'Một ít thú vui của mình là sưu tập meme hài, bạn có thể dùng chúng lâu lâu gửi cho người thân hay bạn bè. Giúp họ vui vẻ trong một lúc cũng hay mà.';
 
 const Memefun = () => {
   const { colorMode } = useColorMode();
@@ -40,7 +40,7 @@ const Memefun = () => {
           description,
           images: [
             {
-              url: 'https://leerob.io/static/images/dashboard.jpg',
+              url: 'https://vnnextjs.com/static/images/dashboard.jpg',
               alt: description,
               width: 900,
               height: 720
@@ -67,7 +67,7 @@ const Memefun = () => {
               Memefun
             </Heading>
             <Text color={secondaryTextColor[colorMode]}>
-              Make the world has your voice
+              Make the world has your voice !
             </Text>
           </Flex>
           <Flex

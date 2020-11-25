@@ -17,6 +17,19 @@ const Footer = () => (
           variant="ghost"
         />
       </Link>
+      <Link
+        href="https://www.linkedin.com/in/chinhluan"
+        title="LinkedIn"
+        isExternal
+      >
+        <IconButton
+          aria-label="LinkedIn"
+          icon="linkedin"
+          size="lg"
+          color="gray.500"
+          variant="ghost"
+        />
+      </Link>
 
 
       <Link href="mailto:ch.luan2015@gmail.com" title="Email" isExternal>

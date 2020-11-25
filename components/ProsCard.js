@@ -28,7 +28,7 @@ const ProsCard = ({ title, pros }) => {
       my={4}
       w="100%"
     >
-      <Text>{`You might use ${title} if...`}</Text>
+      <Text>{`Bạn có thể dùng ${title} nếu...`}</Text>
       <List spacing={2} mt={4}>
         {pros.map((pro) => (
           <ListItem

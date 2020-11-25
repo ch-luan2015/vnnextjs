@@ -29,7 +29,7 @@ const ConsCard = ({ title, cons }) => {
       my={4}
       w="100%"
     >
-      <Text>{`You might not use ${title} if...`}</Text>
+      <Text>{`Bạn có thể không sử dụng ${title} nếu...`}</Text>
       <List spacing={2} mt={4}>
         {cons.map((con) => (
           <ListItem
