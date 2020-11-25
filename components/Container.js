@@ -2,6 +2,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import { useColorMode, Button, Flex, Box, IconButton } from '@chakra-ui/core';
 import styled from '@emotion/styled';
+import Footer from './Footer';
 
 
 const StickyNav = styled(Flex)`
@@ -83,6 +84,7 @@ function Container({ children }) {
 
       >
         {children}
+        <Footer />
       </Flex>
     </>
   )

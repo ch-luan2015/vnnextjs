@@ -9,14 +9,26 @@ import {
   Stack,
   Avatar,
   Link,
-  Box
+  Box,
+  Image
 } from '@chakra-ui/core';
 import Container from '../components/Container';
+import BlogSeo from '../components/BlogSeo';
+
+const editUrl = (slug) =>
+  `https://github.com/ch-luan2015/cl-blognext/edit/master/pages/blog/${slug}.mdx`;
+// const discussUrl = (slug) =>
+//   `https://mobile.twitter.com/search?q=${encodeURIComponent(
+//     `https://leerob.io/blog/${slug}`
+//   )}`;
 
 export default function BlogLayout({ children, frontMatter }) {
-  const slug = frontMatter.__resourcePath
-    .replace('blog/', '')
-    .replace('.mdx', '');
+  // const slug = frontMatter.__resourcePath
+  //   .replace('blog/', '')
+  //   .replace('.mdx', '');
+
+  const slug = frontMatter.__resourcePath.replace('.mdx', '')
+
   const { colorMode } = useColorMode();
   const textColor = {
     light: 'gray.700',
@@ -25,6 +37,8 @@ export default function BlogLayout({ children, frontMatter }) {
 
   return (
     <Container>
+      <BlogSeo url={`https://vnnextjs.com/blog/${slug}`} {...frontMatter} />
+
       <Stack
         as="article"
         spacing={8}
@@ -54,15 +68,16 @@ export default function BlogLayout({ children, frontMatter }) {
           >
             <Flex align="center">
               <Avatar
-                size="xs"
+                size="sm"
                 name="NCL"
-                src="static/images/Admin/paleKing.jpg"
+                src="/static/favicons/ncl.png"
+                bg="yellow.100"
                 mr={2}
               />
 
               <Text fontSize="sm" color={textColor[colorMode]}>
                 {frontMatter.by}
-                {'NCL-'}
+                {'NCL / '}
                 {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
               </Text>
             </Flex>
