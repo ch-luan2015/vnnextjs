@@ -37,4 +37,6 @@ $ yarn dev
 - [AntDesign](https://ant.design/)
 - [MDXjs](https://mdxjs.com/)
 
-## ![LeeRobinson](https://cdn.my-shell.com/images/size/150/0/LuanBlog/leerob.jpg) Thanks Lee Robinson ❤️
+## [Thanks Lee Robinson ❤️](https://leerob.io)
+
+![LeeRobinson](https://cdn.my-shell.com/images/size/150/0/LuanBlog/leerob.jpg)
