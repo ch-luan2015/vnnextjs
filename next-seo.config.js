@@ -1,6 +1,5 @@
 const title = 'Nguyen Chinh Luan – Developer, writer.';
-const description =
-  'Front-end developer.';
+const description = 'Front-end developer.';
 
 const SEO = {
   title,
