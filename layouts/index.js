@@ -70,8 +70,8 @@ export default function BlogLayout({ children, frontMatter }) {
               <Avatar
                 size="sm"
                 name="NCL"
-                src="/static/favicons/ncl.png"
-                bg="yellow.100"
+                src="/static/favicons/android-icon-512x512.png"
+                bg="gray.50"
                 mr={2}
               />
 

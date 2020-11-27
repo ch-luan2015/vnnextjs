@@ -1,6 +1,6 @@
 # Hello, friend.
 
-# clblog.io
+# vnnextjs.com
 
 My Example blog has transformed over the years - from a static HTML site, to React/MD.
 
@@ -23,15 +23,18 @@ My Example blog has transformed over the years - from a static HTML site, to Rea
 > https://localhost:3000
 
 ```bash
-$ git clone https://github.com/ch-luan2015/CL-CV
-$ cd CL-CV
-$ yarn
-$ yarn start
+$ git clone https://github.com/ch-luan2015/cl-blognext
+$ cd cl-blognext
+$ yarn install
+$ yarn dev
 ```
 
 ## Built Using
 
 - [React](https://reactjs.org/)
+- [NextJs](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
 - [AntDesign](https://ant.design/)
 - [React Markdown](https://github.com/remarkjs/react-markdown)
+
+## ![LeeRobinson](https://avatars1.githubusercontent.com/u/9113740?s=400&u=6b5c9843f6d345ee178d1171dd3025610312af35&v=4) Thanks Lee Robinson ❤️
