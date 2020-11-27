@@ -21,7 +21,7 @@ import { frontMatter as blogPosts } from './blog/**/*.mdx';
 
 
 const url = 'https://vnnextjs.com';
-const title = 'Blog– Nguyen Chinh Luan';
+const title = 'Blog–N.C.Luan';
 const description =
   'Một ích thông tin về phần mềm, thủ thuật Mac, lập trình web đặc biệt là nextjs và cuộc sống của mình.';
 

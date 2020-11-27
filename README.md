@@ -35,6 +35,6 @@ $ yarn dev
 - [NextJs](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
 - [AntDesign](https://ant.design/)
-- [React Markdown](https://github.com/remarkjs/react-markdown)
+- [MDXjs](https://mdxjs.com/)
 
-## ![LeeRobinson](https://avatars1.githubusercontent.com/u/9113740?s=400&u=6b5c9843f6d345ee178d1171dd3025610312af35&v=4) Thanks Lee Robinson ❤️
+## ![LeeRobinson](https://cdn.my-shell.com/images/size/150/0/LuanBlog/leerob.jpg) Thanks Lee Robinson ❤️
