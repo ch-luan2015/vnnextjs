@@ -1,22 +1,23 @@
 # Hello, friend.
 
-# vnnextjs.com
+# [vnnextjs.com](https://vnnextjs.com/)
 
-My Example blog has transformed over the years - from a static HTML site, to React/MD.
+My Example blog has transformed over the years - from a static HTML site, to React/MD, NextJS/MD.
 
 ## Overview
 
 ---
 
-### Home BlogsList with card content:
+### Home BlogList:
 
-- `/`  
-  ![HomePage](https://lh3.googleusercontent.com/pw/ACtC-3dGNHDDSgSnY3wu1i-tEbDFiqL2Ec3FSuSGwjsu1TjD6lMxDwYn00aMzF5oZlVcskIbFEVORy1u7uUDjdrUKc391188Tcf3GCNz3y0h-WFmRoteZiatPG6wL6tMj1Ds-P6-lUG8WBl3XE0iNJSxcAWe=w1609-h1328-no?authuser=0)
+- **`/`**
 
-### Content blog using [React Markdown](https://github.com/mdx-js/mdx)
+![HomePage](https://cdn.my-shell.com/images/size/500/0/LuanBlog/Home.png)
 
-- `/blog/id`
-  ![Blog](https://lh3.googleusercontent.com/_dqeVljswPS8OIw0CO4RdzqSExBfHs6o3_e_jIpmq2aTofcap0gdronGD070e7IR27sfub7-F74BAjXX6n4EotaluEdw5Hs_CnYYDbQri0JTC0pZMXk21lki1PSvGk3Rltqt6j_mhqbTEmYX0o6HDFmR-mY6Xx9er2DEk_R0A2o_Whmgng54iBFFwqQYPBingjD_dX71zMkOFmqRAYv7xivKFQm5YUlT05BvNVf76yfEmP6ARrwP1IM7vEonF0YrtXN35RQOK5hcElo9qDIDC2vdAK10Gp2y_OEj_8Il2K3vWW3R4L1XbmRYZ7ydqmOUVuH0p9tJXslHxgkHSBpGxTUaNJb62aSPti9jTRIxUjIq1YABR6v77A0ksr8CzEAcTmhrYZs-qXLmw9gK0mvYchs4Qfof9wOW940fc7meT6CM-yobdh8bOHFM0iSddDBbLfH5dLZm0-bR6zHnsnMazsTSVRlvpKnq2f4FTphsT04VrWaGaT-TBhnVWablamF_HTU5A_orAsugcW-2sCZ22KIyhb8InhFWb9O9OhrySkgtsAuYxyX49XJndZbNcFoZr21FNPWCNDT47X1ENxDbDRp559qXcgQ4GmZ9_c8XHU3_nWsI_QT5Y_wyu_Oe4osk5jK8RU-2I0dc5fd2BdNNdP_UXTwL4ThxnNNkmeOIzJRWSF012Vc1FcRv17V2=w1456-h1330-no?authuser=0)
+### Content Blog Using MDXJS
+
+-**`/blog`**
+![Blog](https://cdn.my-shell.com/images/size/500/0/LuanBlog/BlogPost.png)
 
 ## Running Locally :
 
@@ -34,9 +35,8 @@ $ yarn dev
 - [React](https://reactjs.org/)
 - [NextJs](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
-- [AntDesign](https://ant.design/)
 - [MDXjs](https://mdxjs.com/)
 
-## [Thanks Lee Robinson ❤️](https://leerob.io)
+## ![LeeRobinson](https://cdn.my-shell.com/images/size/150/0/LuanBlog/leerob.jpg) [Thanks Lee Robinson ❤️](https://leerob.io)
 
-![LeeRobinson](https://cdn.my-shell.com/images/size/150/0/LuanBlog/leerob.jpg)
+## [Thanks ThanhTuan260593](https://github.com/thanhtuan260593) ![thanhtuan260593](https://cdn.my-shell.com/images/size/150/0/LuanBlog/tung.png)
