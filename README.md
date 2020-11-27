@@ -1,6 +1,6 @@
-# Hello, friend.
+## [vnnextjs.com](https://vnnextjs.com/)
 
-# [vnnextjs.com](https://vnnextjs.com/)
+### 👋 Hello, friend.
 
 My Example blog has transformed over the years - from a static HTML site, to React/MD, NextJS/MD.
 
@@ -8,15 +8,16 @@ My Example blog has transformed over the years - from a static HTML site, to Rea
 
 ---
 
-### Home BlogList:
+### Home Page BlogList:
 
 - **`/`**
 
 ![HomePage](https://cdn.my-shell.com/images/size/500/0/LuanBlog/Home.png)
 
-### Content Blog Using MDXJS
+### Content Blog Using MDXJS:
 
--**`/blog`**
+- **`/blog`**
+
 ![Blog](https://cdn.my-shell.com/images/size/500/0/LuanBlog/BlogPost.png)
 
 ## Running Locally :
@@ -39,4 +40,4 @@ $ yarn dev
 
 ## ![LeeRobinson](https://cdn.my-shell.com/images/size/150/0/LuanBlog/leerob.jpg) [Thanks Lee Robinson ❤️](https://leerob.io)
 
-## [Thanks ThanhTuan260593](https://github.com/thanhtuan260593) ![thanhtuan260593](https://cdn.my-shell.com/images/size/150/0/LuanBlog/tung.png)
+## ![thanhtuan260593](https://cdn.my-shell.com/images/size/150/0/LuanBlog/tung.png) [Thanks ThanhTuan260593 ❤️](https://github.com/thanhtuan260593)
