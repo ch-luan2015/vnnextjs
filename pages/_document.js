@@ -8,7 +8,7 @@ class MyDocument extends Document {
       <Html lang="vi">
         <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
         <Head>
-          <link href="/static/favicons/ncl.png" rel="shortcut icon" />
+          <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link href="/static/favicons/site.webmanifest" rel="manifest" />
           <link
             rel="preconnect"
@@ -21,18 +21,18 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <link
-            href="/static/favicons/nclicon-appletouch.png"
-            rel="apple-touch-icon"
+            href="/static/favicons/apple-icon-180x180.png"
+            rel="apple-icon"
             sizes="180x180"
           />
           <link
-            href="/static/favicons/nclicon-32x32.png"
+            href="/static/favicons/favicon-32x32.png"
             rel="icon"
             sizes="32x32"
             type="image/png"
           />
           <link
-            href="/static/favicons/nclicon-16x16.png"
+            href="/static/favicons/favicon-16x16.png"
             rel="icon"
             sizes="16x16"
             type="image/png"
