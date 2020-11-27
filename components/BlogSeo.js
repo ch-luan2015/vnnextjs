@@ -2,6 +2,8 @@ import React from 'react';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
 
 const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
+  console.log("title", title);
+  console.log("image", image);
   const date = new Date(publishedAt).toISOString();
   const featuredImage = {
     url: `https://vnnextjs.com${image}`,
@@ -31,7 +33,7 @@ const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
         datePublished={date}
         description={summary}
         images={[featuredImage]}
-        publisherLogo="/static/favicons/nclicon-192x192.png"
+        publisherLogo="/static/favicons/android-icon-192x192.png"
         publisherName="Nguyen Chinh Luan"
         title={title}
         url={url}

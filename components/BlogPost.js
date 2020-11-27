@@ -4,7 +4,7 @@ import useSWR from 'swr';
 import { useColorMode, Heading, Text, Flex, Box, Link } from '@chakra-ui/core';
 import format from 'comma-number';
 
-import fetcher from '../lib/fetcher'
+import fetcher from '../lib/fetcher';
 
 
 const BlogPost = (frontMatter) => {
@@ -17,9 +17,10 @@ const BlogPost = (frontMatter) => {
 
 
   var slug = frontMatter.__resourcePath.replace('.mdx', '')
-
-  // const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
-  // const views = data?.total;
+  console.log({ slug });
+  const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
+  const views = data?.total;
+  console.log("data", data);
 
 
   return (
@@ -34,14 +35,14 @@ const BlogPost = (frontMatter) => {
             <Heading size="md" as="h3" mb={2} fontWeight="medium">
               {title}
             </Heading>
-            {/* <Text
+            <Text
               color="gray.500"
               minWidth="105px"
               textAlign={['left', 'right']}
               mb={[4, 0]}
             >
-              {`${views ? format(view) : '---'}view`}
-            </Text> */}
+              {`${views ? format(views) : '---'}view`}
+            </Text>
           </Flex>
           <Text color={secondaryTextColor[colorMode]}>{summary}</Text>
         </Box>
