@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/core';
 import Container from '../components/Container';
 import BlogSeo from '../components/BlogSeo';
-
+import ViewCounter from '../components/ViewCounter';
 const editUrl = (slug) =>
   `https://github.com/ch-luan2015/cl-blognext/edit/master/pages/blog/${slug}.mdx`;
 // const discussUrl = (slug) =>
@@ -82,11 +82,11 @@ export default function BlogLayout({ children, frontMatter }) {
               </Text>
             </Flex>
 
-            {/* <Text fontSize="sm" color="gray.500" minWidth="100px" mt={[2, 0]}>
+            <Text fontSize="sm" color="gray.500" minWidth="100px" mt={[2, 0]}>
               {frontMatter.readingTime.text}
               {` • `}
               <ViewCounter id={slug} />
-            </Text> */}
+            </Text>
           </Flex>
         </Flex>
         {children}

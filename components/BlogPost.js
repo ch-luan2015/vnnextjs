@@ -16,15 +16,14 @@ const BlogPost = (frontMatter) => {
   };
 
 
-  var slug = frontMatter.__resourcePath.replace('.mdx', '')
-  console.log({ slug });
+  var slug = frontMatter.__resourcePath.replace('.mdx', '').replace('blog/', '')
+  console.log("slug : ", slug);
   const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
   const views = data?.total;
-  console.log("data", data);
 
 
   return (
-    <NextLink href={`${slug}`} passHref>
+    <NextLink href={`blog/${slug}`} passHref>
       <Link w="100%" _hover={{ textDecoration: 'none' }}>
         <Box mb={8} display="block" width="100%">
           <Flex
