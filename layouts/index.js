@@ -15,6 +15,7 @@ import {
 import Container from '../components/Container';
 import BlogSeo from '../components/BlogSeo';
 import ViewCounter from '../components/ViewCounter';
+
 const editUrl = (slug) =>
   `https://github.com/ch-luan2015/cl-blognext/edit/master/pages/blog/${slug}.mdx`;
 // const discussUrl = (slug) =>
@@ -23,12 +24,10 @@ const editUrl = (slug) =>
 //   )}`;
 
 export default function BlogLayout({ children, frontMatter }) {
-  // const slug = frontMatter.__resourcePath
-  //   .replace('blog/', '')
-  //   .replace('.mdx', '');
 
-  const slug = frontMatter.__resourcePath.replace('.mdx', '')
+  const slug = frontMatter.__resourcePath.replace('.mdx', '').replace('blog/', '')
 
+  console.log("slug layout", slug);
   const { colorMode } = useColorMode();
   const textColor = {
     light: 'gray.700',

@@ -1,4 +1,4 @@
-import db from '../../lib/db';
+import db from '../../lib/db-admin';
 
 const incrementViews = async (req, res) => {
   if (!req.query.id) {

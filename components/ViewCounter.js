@@ -3,7 +3,6 @@ import format from 'comma-number';
 
 import loadDb from '../lib/db';
 
-// import loadDb from '../lib/load-db';
 
 const ViewCounter = ({ id }) => {
   const [views, setViews] = useState('');

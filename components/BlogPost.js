@@ -40,7 +40,7 @@ const BlogPost = (frontMatter) => {
               textAlign={['left', 'right']}
               mb={[4, 0]}
             >
-              {`${views ? format(views) : '---'}view`}
+              {`${views ? format(views) : '---'} view`}
             </Text>
           </Flex>
           <Text color={secondaryTextColor[colorMode]}>{summary}</Text>
