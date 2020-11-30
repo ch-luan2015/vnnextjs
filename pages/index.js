@@ -72,6 +72,7 @@ const Blog = () => {
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               Blog
             </Heading>
+
             <Text color={secondaryTextColor[colorMode]} mb={2}>
               {`Mình bắt đầu viết từ năm 2019, Một phần về tự học web như html, css, js ... 
                 Tổng cộng mình đã viết ${blogPosts.length} bài trên trang này.   
