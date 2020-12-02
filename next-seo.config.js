@@ -13,7 +13,7 @@ const SEO = {
     description,
     images: [
       {
-        url: 'https://vnnextjs.com/static/images/og.jpg',
+        url: 'https://vnnextjs.com/static/images/ncl-next-ticket.png',
         alt: title,
         width: 1280,
         height: 720
