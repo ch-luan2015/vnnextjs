@@ -25,8 +25,8 @@ My Example blog has transformed over the years - from a static HTML site, to Rea
 > https://localhost:3000
 
 ```bash
-$ git clone https://github.com/ch-luan2015/cl-blognext
-$ cd cl-blognext
+$ git clone https://github.com/ch-luan2015/vnnextjs
+$ cd vnnextjs
 $ yarn install
 $ yarn dev
 ```
